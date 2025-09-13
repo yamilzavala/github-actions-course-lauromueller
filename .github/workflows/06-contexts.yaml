@@ -1,3 +1,6 @@
+# See 06-contexts/README.md for more information
+# about the how to use contexts in GitHub Actions.
+
 name: 06 - Contexts
 run-name: 06 - Contexts | DEBUG - ${{ inputs.debug }}
 
@@ -41,15 +44,10 @@ jobs:
         run: |
           echo "Workflow env: ${{ env.MY_WORKFLOW_VAR }}"
           echo "Overwritten env: ${{ env.MY_OVERWRITTEN_VAR }}"
-    
-    # echo-data-2:
-    #     runs-on: ubuntu-latest
-    #     steps:
-    #         - name: Print Env Variables
-    #           run: |
-    #             echo: "Workflow env: $MY_WORKFLOW_VAR"
-    #             echo: "Overwritten env: $MY_OVERWRITTEN_VAR"
-
-
-
-    
+  echo-data2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Env Variables
+        run: |
+          echo "Workflow env: $MY_WORKFLOW_VAR"
+          echo "Overwritten env: $MY_OVERWRITTEN_VAR"
