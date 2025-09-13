@@ -1,7 +1,8 @@
 name: 06 - Contexts
 
-on: push
-    # - workflow_dispatch
+on: 
+    push:
+    workflow_dispatch:
 
 # env: 
 #     MY_WORKFLOW_VAR: 'workflow'
