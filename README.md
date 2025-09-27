@@ -1,1 +1,1 @@
-Repository containing all examples and notes for GitHub Actions course. Has been edited.
+Repository containing all examples and notes for GitHub Actions course. Has been edited once again.
