@@ -47,7 +47,7 @@ jobs:
       - deploy-nonprod
     steps:
       - name: "Running load tests"
-        run: "Running load tests"
+        run: echo "Running load tests"
 
   deploy-prod:
     runs-on: ubuntu-latest
@@ -56,6 +56,6 @@ jobs:
       - load-tests
     steps:
       - name: "Running load tests"
-        run: "Running load tests"
+        run: echo "Running load tests"
 
   
