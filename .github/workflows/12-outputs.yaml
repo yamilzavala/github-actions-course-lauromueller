@@ -19,17 +19,17 @@ jobs:
       output1: ${{ steps.build.outputs.output1}}
     steps:
       - name: Print GITHUB_OUTPUT path
-        run: echo "GITHUB_OUTPUT"
+        run: echo "$GITHUB_OUTPUT"
       - name: Build
         id: build
         run:  | 
-          echo "GITHUB_OUTPUT"
-          echo "status=${{ inputs.build-status }}" >> "GITHUB_OUTPUT"
-    #       echo "output1=value1" >> "GITHUB_OUTPUT"
-    #       echo "output2=value2" >> "GITHUB_OUTPUT"
+          echo "$GITHUB_OUTPUT"
+          echo "status=${{ inputs.build-status }}" >> "$GITHUB_OUTPUT"
+    #       echo "output1=value1" >> "$GITHUB_OUTPUT"
+    #       echo "output2=value2" >> "$GITHUB_OUTPUT"
     #   - name: Step with mistake
     #     run: |
-    #       echo "mistake=true" >> "GITHUB_OUTPUT"
+    #       echo "mistake=true" >> "$GITHUB_OUTPUT"
     #       cat "$GITHUB_OUTPUT"
   deploy:
     runs-on: ubuntu-latest
