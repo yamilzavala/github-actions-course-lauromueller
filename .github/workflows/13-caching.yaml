@@ -35,20 +35,24 @@ jobs:
         with:
           node-version: ${{inputs.node-version}}
 
-    #   - name: Download cached dependencies
-    #     if: ${{inputs.use-cache}}
-    #     uses: actions/cache@v3
-    #     id: cache
-    #     with:
-    #       path: 13-caching/react-app/node_modules
-    #       key: deps-node-modules-${{ hashFiles('13-caching/react-app/package-lock.json') }}
+      - name: Download cached dependencies
+        if: ${{inputs.use-cache}}
+        uses: actions/cache@v3
+        id: cache
+        with:
+          path: 13-caching/react-app/node_modules
+          key: deps-node-modules-${{ hashFiles('13-caching/react-app/package-lock.json') }}
+
       - name: Install dependencies
-        # if: ${{steps.cache.outputs.cache-hit != 'true'}}
+        if: ${{steps.cache.outputs.cache-hit != 'true'}}
         run: npm ci
+
       - name: Testing
         run: npm run test
+
       - name: Building
         run: npm run build
+
       - name: Deploying to nonprod
         run: echo "Deploying to nonprod"
       
