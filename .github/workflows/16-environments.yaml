@@ -19,7 +19,7 @@ jobs:
           run: |
             echo "Deploying to staging"
   e2e-tests:
-    runs-on: ububtu-latest
+    runs-on: ubuntu-latest
     needs: deploy-staging
     steps:
         - name: E2E test
