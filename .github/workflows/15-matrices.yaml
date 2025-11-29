@@ -23,7 +23,8 @@ jobs:
     steps:
       - name: Setup node
         uses: actions/setup-node@v4
-        with: ${{matrix.node-version}}
+        with: 
+          node-version: ${{matrix.node-version}}
     #   - name: Fail if experimental
         
       - name: Perform some tests
