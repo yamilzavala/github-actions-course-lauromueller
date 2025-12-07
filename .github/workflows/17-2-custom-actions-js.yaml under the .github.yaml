@@ -1,5 +1,5 @@
 name: 17 - 2 - Custom Actions - JS
-run-name: 17 - 2 - Custom Actions - JS | BB ${{ inputs.base-branch }} - TB ${{ inputs.target-branch }} - WD ${{ inputs.working-dir }}  
+run-name: 17 - 2 - Custom Actions - JS | BB ${{ inputs.base-branch }} - TB ${{ inputs.head-branch }} - WD ${{ inputs.working-dir }}  
 
 on:
   workflow_dispatch:
@@ -7,7 +7,7 @@ on:
       base-branch:
         type: string
         default: main
-      target-branch:
+      head-branch:
         type: string
         default: update-dependencies        
       working-dir:
@@ -31,7 +31,7 @@ jobs:
           uses: './.github/actions/js-dependency-update'
           with: 
             base-branch: ${{ inputs.base-branch }}
-            target-branch: ${{ inputs.target-branch }}
+            head-branch: ${{ inputs.head-branch }}
             working-dir: ${{ inputs.working-dir }}
             gh-token: ${{ secrets.GITHUB_TOKEN }}
             debug: ${{ inputs.debug }}
