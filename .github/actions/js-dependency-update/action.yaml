@@ -10,7 +10,7 @@ inputs:
     description: The branch from which the PR is created
     default: update-dependencies
     required: false
-  working-directory:
+  working-dir:
     description: The working directory of the project to check for dependency updates
     required: true
   gh-token:
